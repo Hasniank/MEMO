@@ -10,9 +10,8 @@ export const Login = () => {
   return (
     <View style={Styles().container}>
       <View style={Styles().textContainer}>
-        <View></View>
-        <View></View>
         <TouchableOpacity
+        style={Styles().SkipButton}
           onPress={() => {
             setModalVisible(!modalVisible);
             console.log('open');
@@ -20,7 +19,7 @@ export const Login = () => {
           <Text style={Styles().skipText}>Skip</Text>
         </TouchableOpacity>
       </View>
-      <View>
+      <View style={Styles()}>
         <Image source={IMAGE.IMAGES.LoginWelcome} style={Styles().Image} />
       </View>
       <View style={Styles().ButtonContainer}>
@@ -68,7 +67,7 @@ export const Login = () => {
         />
         <Modal visible={modalVisible} transparent={true}>
           <View
-            style={{justifyContent: 'center', alignItems: 'center', flex: 1}}>
+            style={{justifyContent: 'center', alignItems: 'center', flex: 1,backgroundColor:'#343141E5'}}>
             <TouchableOpacity
               onPress={() => {
                 setModalVisible(!modalVisible);
