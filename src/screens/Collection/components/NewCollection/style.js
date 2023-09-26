@@ -53,4 +53,26 @@ export const Styles = () =>
       textAlign: 'center',
       fontSize: 20,
     },
+    textInputView: {
+      padding: 10,
+      borderWidth: 1,
+      borderColor: '#343141',
+      borderRadius: 5,
+      backgroundColor: '#343141',
+      margin: 10,
+      color: '#fff',
+      width: ScreenLayouts.screenWidth * 0.9,
+      height: ScreenLayouts.screenHeight * 0.06,
+    },
+    text: {
+      fontSize: 16,
+    },
+    input: {
+      fontSize: 16,
+      padding: 10,
+      borderWidth: 1,
+      borderColor: '#ccc',
+      borderRadius: 5,
+      color: '#fff',
+    },
   });

@@ -1,4 +1,4 @@
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity, TextInput} from 'react-native';
 import React, {useState} from 'react';
 import {Styles} from './style';
 // Ionicons
@@ -7,6 +7,16 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export const NewCollection = () => {
   const [collection, setCollection] = useState(false);
+  const [isInputMode, setInputMode] = useState(false);
+  const [text, setText] = useState('Collection Name');
+
+  const toggleInputMode = () => {
+    setInputMode(!isInputMode);
+  };
+
+  const onChangeText = newText => {
+    setText(newText);
+  };
 
   return (
     <View style={Styles().container}>
@@ -40,9 +50,23 @@ export const NewCollection = () => {
       <View>
         {collection == false ? (
           <View style={Styles()}>
-          <View>
-            
-          </View>
+            <View>
+              <TouchableOpacity
+                onPress={toggleInputMode}
+                style={Styles().textInputView}>
+                {isInputMode ? (
+                  <TextInput
+                    style={Styles().input}
+                    value={text}
+                    onChangeText={onChangeText}
+                    onBlur={toggleInputMode}
+                    autoFocus={true}
+                  />
+                ) : (
+                  <Text style={Styles().text}>{text}</Text>
+                )}
+              </TouchableOpacity>
+            </View>
           </View>
         ) : (
           <View>
