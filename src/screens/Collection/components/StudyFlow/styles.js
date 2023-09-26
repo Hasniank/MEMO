@@ -121,6 +121,8 @@ export const Styles = () =>
     studyFinalMain: {
       width: ScreenLayouts.screenWidth * 1,
       height: ScreenLayouts.screenHeight * 0.4,
+      // justifyContent: 'center',
+      alignItems: 'center',
     },
     studyFinalFooter: {
       width: ScreenLayouts.screenWidth * 1,
@@ -128,7 +130,7 @@ export const Styles = () =>
     },
     wellText: {
       color: '#60D88B',
-      fontSize: 20,
+      fontSize: 15,
       marginTop: 10,
     },
     studyFinalHeaderText: {
@@ -142,5 +144,30 @@ export const Styles = () =>
       color: '#FFF',
       fontSize: 20,
       marginTop: 10,
+    },
+    performanceText: {
+      color: '#ADA7C1',
+      fontSize: 16,
+      marginTop: 10,
+    },
+    performanceImageConatiner: {
+      width: ScreenLayouts.screenWidth * 0.9,
+      borderTopWidth: 1,
+      borderColor: '#7A748E',
+      justifyContent: 'center',
+      alignItems: 'flex-start',
+    },
+    performanceCircleContainer: {
+      flexDirection: 'row',
+      justifyContent: 'space-evenly',
+      alignItems: 'center',
+    },
+    percentageText: {
+      color: '#9C80EA',
+      fontSize: 16,
+    },
+    MarkedText: {
+      fontSize: 12,
+      color: '#ffff',
     },
   });

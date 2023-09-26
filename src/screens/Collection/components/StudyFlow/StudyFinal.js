@@ -4,6 +4,7 @@ import {Styles} from './styles';
 import {LineBar, ScreenLayouts} from '../../../../constant';
 import {IMAGE} from '../../../../assets';
 import {Progress} from '../../../Progress';
+import {ImageCircle} from '../../../../commons';
 
 export const StudyFinal = () => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -17,9 +18,17 @@ export const StudyFinal = () => {
         </Text>
         <Text style={Styles().flutterText}># Flutter Ecosystem</Text>
       </View>
-      {/* <View style={Styles().studyFinalMain}>
-        <Text>Your performance </Text>
-        <View>
+      <View style={Styles().studyFinalMain}>
+        <View style={Styles().performanceImageConatiner}>
+          <Text style={Styles().performanceText}>Your performance </Text>
+          <View style={Styles().performanceCircleContainer}>
+            <View>
+              {/* <Image source={IMAGE.IMAGES.Sad} />
+              <Text style={Styles().percentageText}>20%</Text>
+              <Text>Marked as Hard</Text> */}
+            </View>
+          </View>
+          {/* <View>
           <View>
             <Image source={IMAGE.IMAGES.Sad} />
             <Text>20%</Text>
@@ -35,12 +44,13 @@ export const StudyFinal = () => {
             <Text>20%</Text>
             <Text>Marked as Hard</Text>
           </View>
-        </View>
+          </View>
         <View>
-          <Text>30 /40 Memos completed</Text>
-          <LineBar value={70} maxValue={100} />
-        </View>
+        <Text>30 /40 Memos completed</Text>
+        <LineBar value={70} maxValue={100} />
       </View> */}
+        </View>
+      </View>
       {/* <View style={Styles().studyFinalFooter}>
         <TouchableOpacity
           style={{
