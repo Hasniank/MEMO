@@ -25,10 +25,15 @@ const IMAGES = {
   Forward: require('./images/forward.png'),
   Happy: require('./images/happy.png'),
   Sad: require('./images/sad.png'),
-  Easy:require('./images/Easy.png'),
-  Celebration:require('./images/Celebration.png')
+  Easy: require('./images/Easy.png'),
+  Celebration: require('./images/Celebration.png'),
+  Minus: require('./images/minus.png'),
 };
 
+const Fonts = {
+  RobotoMono_Regular: 'RobotoMono-Regular.ttf',
+};
 export const IMAGE = {
   IMAGES,
+  Fonts,
 };

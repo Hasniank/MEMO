@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import {ScreenLayouts} from '../../constant/Screenlayout';
+import {IMAGE} from '../../assets';
 
 export const Styles = ({} = {}) =>
   StyleSheet.create({
@@ -8,28 +9,24 @@ export const Styles = ({} = {}) =>
       backgroundColor: '#1F1D28',
       justifyContent: 'center',
       alignItems: 'center',
-      // width: ScreenLayouts.screenWidth * 1,
-      // height: ScreenLayouts.screenHeight * 1,
     },
     textContainer: {
       justifyContent: 'space-between',
       alignItems: 'center',
       width: ScreenLayouts.screenWidth * 0.95,
+      flexDirection: 'row',
     },
-    SkipButton: {
-      marginLeft: 'auto',
-    },
+    SkipButton: {},
     skipText: {
       fontSize: 20,
       color: '#60D88B',
+      fontFamily: 'RobotoMono-Thin',
     },
     ImageContainer: {
       width: ScreenLayouts.screenWidth * 0.9,
+      marginTop: 30,
     },
-    Image: {
-      // width: ScreenLayouts.screenWidth * 0.9,
-      // height: ScreenLayouts.screenHeight * 0.6,
-    },
+    Image: {},
     ButtonContainer: {
       justifyContent: 'center',
       alignItems: 'center',
@@ -43,7 +40,7 @@ export const Styles = ({} = {}) =>
     modalContainer: {
       backgroundColor: '#1F1D28',
       width: ScreenLayouts.screenWidth * 1,
-      // justifyContent: 'center',
+
       alignItems: 'center',
       height: ScreenLayouts.screenHeight * 0.43,
     },

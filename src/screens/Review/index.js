@@ -16,7 +16,7 @@ export const Review = () => {
         <Text style={Style().reviewText}>Review</Text>
         <View></View>
       </View>
-      {/* {review === false ? (
+      {review === false ? (
         <View style={Style().mainContainer}>
           <MaterialCommunityIcons
             name="chevron-right-box"
@@ -41,29 +41,18 @@ export const Review = () => {
           <View style={Style().reviewContainerInner}>
             <Text style={Style().stateText}>EN-US</Text>
             <Text style={Style().flutterText}>Flutter Ecosystem</Text>
-            <View>
-              <Text>FLUTTER</Text>
+            <View style={Style().tagContainer}>
+              <View style={Style().tag}>
+                <Text style={Style().tagText}>FLUTTER</Text>
+              </View>
             </View>
-            <Text>Memory recall</Text>
-            <LineBar maxValue={100} value={40} />
-          </View>
-        </View>
-      )} */}
-      <View style={Style().reviewContainer}>
-        <View style={Style().reviewContainerInner}>
-          <Text style={Style().stateText}>EN-US</Text>
-          <Text style={Style().flutterText}>Flutter Ecosystem</Text>
-          <View style={Style().tagContainer}>
-            <View style={Style().tag}>
-              <Text style={Style().tagText}>FLUTTER</Text>
+            <Text style={Style().memoryText}>Memory recall</Text>
+            <View style={Style().barContainer}>
+              <LineBar maxValue={100} value={40} />
             </View>
           </View>
-          <Text style={Style().memoryText}>Memory recall</Text>
-          <View style={Style().barContainer}>
-            <LineBar maxValue={100} value={40} />
-          </View>
         </View>
-      </View>
+      )}
     </View>
   );
 };

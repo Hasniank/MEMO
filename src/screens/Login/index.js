@@ -10,6 +10,8 @@ export const Login = ({navigation}) => {
   return (
     <View style={Styles().container}>
       <View style={Styles().textContainer}>
+        <View></View>
+        <View></View>
         <TouchableOpacity
           style={Styles().SkipButton}
           onPress={() => {

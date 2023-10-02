@@ -9,9 +9,9 @@ import {NewCollection} from './src/screens/Collection/components/NewCollection';
 
 export const App = () => {
   return (
-    // <NavigationContainer>
-    //   <MyStack />
-    // </NavigationContainer>
-    <NewCollection />
+    <NavigationContainer>
+      <MyStack />
+    </NavigationContainer>
+    // <Progress />
   );
 };

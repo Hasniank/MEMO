@@ -57,4 +57,32 @@ export const CircleBar = ({value, size, color, image}) => {
   );
 };
 
+// import {View, Text, Image} from 'react-native';
+// import React, {useState} from 'react';
+// // import { ProgressCircle } from 'react-native-svg-charts';
+// import ProgressCircle from 'react-native-svg-charts';
+// import {IMAGE} from '../../assets';
 
+// export const CircleBar = () => {
+//   const [Progress, setProgress] = useState(0.7);
+//   return (
+//     <View style={{alignItems: 'center'}}>
+//       <ProgressCircle
+//         style={{height: 200}}
+//         Progress={Progress}
+//         progressColor={'rgb(134, 65, 244)'}
+//       />
+//       <Image
+//         source={IMAGE.IMAGES.Sad} // Replace with your image source
+//         style={{
+//           position: 'absolute',
+//           width: 120, // Adjust the image width as needed
+//           height: 120, // Adjust the image height as needed
+//           borderRadius: 60, // Half of the width or height to make it a circle
+//           top: '30%', // Adjust the position as needed
+//           left: '30%', // Adjust the position as needed
+//         }}
+//       />
+//     </View>
+//   );
+// };
