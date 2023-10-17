@@ -9,7 +9,7 @@ export const Styles = () =>
     headerContainer: {
       width: ScreenLayouts.screenWidth * 1,
       backgroundColor: '#343141',
-      height: ScreenLayouts.screenHeight * 0.15,
+      height: ScreenLayouts.screenHeight * 0.18,
       justifyContent: 'center',
       alignItems: 'flex-start',
     },
@@ -22,7 +22,8 @@ export const Styles = () =>
     },
     detailText: {
       color: '#fff',
-      fontSize: 15,
+      fontSize: 17,
+      fontWeight: 'bold',
     },
     headerTextContainer: {
       marginLeft: 20,
@@ -31,9 +32,13 @@ export const Styles = () =>
     },
     stateText: {
       color: '#C7C3DB',
+      fontSize: 12,
     },
     titleText: {
       color: '#FFFFFF',
+      fontSize: 20,
+      letterSpacing: 2,
+      fontWeight: '900',
     },
     innerContainer: {
       backgroundColor: '#1F1F28',
@@ -128,5 +133,18 @@ export const Styles = () =>
       alignItems: 'center',
       borderRadius: 5,
       marginTop: 10,
+    },
+    tagView: {
+      flexDirection: 'row',
+    },
+    tags: {
+      backgroundColor: '#846BCD',
+      color: '#FFFFFF',
+      width: '30%',
+      height: 20,
+      textAlign: 'center',
+      borderRadius: 5,
+      margin: 5,
+      fontSize: 15,
     },
   });

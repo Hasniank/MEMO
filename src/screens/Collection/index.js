@@ -5,10 +5,29 @@ import {IMAGE} from '../../assets';
 import {ExploreView} from '../../commons/ExploreView';
 import {CommonButton} from '../../commons';
 import {ScreenLayouts} from '../../constant/Screenlayout';
+import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export const Collection = ({navigation}) => {
   const [collection, setCollection] = useState(false);
-
+  // const Tags = [
+  //   {Framework: 'Framework'},
+  //   {Flutter: 'Flutter'},
+  //   {Cross: 'Cross - platform'},
+  //   {Git: 'Git'},
+  //   {Versioning: 'Versioning'},
+  // ];
+  // Tags.map(i => {
+  //   console.log(i);
+  // });
+  const Tags = [
+    'Framework',
+    'Flutter',
+    'Cross - platform',
+    'Git',
+    'Versioning',
+  ];
+  console.log(Tags[0]);
   return (
     <View style={Styles().container}>
       <View style={Styles().header}>
@@ -16,10 +35,10 @@ export const Collection = ({navigation}) => {
           onPress={() => {
             navigation.navigate('Setting');
           }}>
-          <Image source={IMAGE.IMAGES.SettingICON} />
+          <FontAwesome6 name="sliders" size={20} color="#fff" />
         </TouchableOpacity>
         <Text style={Styles().collectionText}>Collection</Text>
-        <Image source={IMAGE.IMAGES.Filter} />
+        <Ionicons name="filter" size={25} color="#fff" />
       </View>
       <View style={Styles().buttonContainer}>
         <TouchableOpacity
@@ -46,30 +65,69 @@ export const Collection = ({navigation}) => {
       <View>
         {collection == false ? (
           <View style={Styles()}>
-            <ExploreView
-              Title={'Flutter'}
-              detail={'SEE ALL'}
-              description={'Flutter Ecosystem'}
-              state={'EN-US'}
-              tags={'FLUTTER'}
-              onPress={() => {
-                navigation.navigate('Details');
-              }}
-            />
-            <ExploreView
-              Title={'Versioning'}
-              detail={'SEE ALL'}
-              description={'Get started with Git'}
-              state={'EN-US'}
-              tags={'FLUTTER'}
-            />
-            <ExploreView
-              Title={'Scrum'}
-              detail={'SEE ALL'}
-              description={'Scrum Foundations'}
-              state={'EN-US'}
-              tags={'FLUTTER'}
-            />
+            <View style={Styles().exploreContainer}>
+              <View style={Styles().exploreInnerContainer}>
+                <Text style={Styles().title}>Flutter </Text>
+                <View></View>
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate('Details',{Tags:Tags});
+                  }}>
+                  <Text style={Styles().details}>See All</Text>
+                </TouchableOpacity>
+              </View>
+              <View style={Styles().exploreLastContainer}>
+                <Text style={Styles().state}>EN-US</Text>
+                <Text style={Styles().description}>Flutter Ecosystems</Text>
+                <View style={Styles().tagView}>
+                  {Tags.map(i => (
+                    <Text style={Styles().tags}>{i}</Text>
+                  ))}
+                </View>
+              </View>
+            </View>
+            <View style={Styles().exploreContainer}>
+              <View style={Styles().exploreInnerContainer}>
+                <Text style={Styles().title}>Versioning </Text>
+                <View></View>
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate('Details');
+                  }}>
+                  <Text style={Styles().details}>See All</Text>
+                </TouchableOpacity>
+              </View>
+              <View style={Styles().exploreLastContainer}>
+                <Text style={Styles().state}>EN-US</Text>
+                <Text style={Styles().description}>Get started with Git</Text>
+                <View style={Styles().tagView}>
+                  {Tags.map(i => (
+                    <Text style={Styles().tags}>{i}</Text>
+                  ))}
+                </View>
+              </View>
+            </View>
+            <View style={Styles().exploreContainer}>
+              <View style={Styles().exploreInnerContainer}>
+                <Text style={Styles().title}>Scrum</Text>
+                <View></View>
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate('Details');
+                  }}>
+                  <Text style={Styles().details}>See All</Text>
+                </TouchableOpacity>
+              </View>
+              <View style={Styles().exploreLastContainer}>
+                <Text style={Styles().state}>EN-US</Text>
+                <Text style={Styles().description}>Scrum Foundations</Text>
+                <View style={Styles().tagView}>
+                  {Tags.map(i => (
+                    <Text style={Styles().tags}>{i}</Text>
+                  ))}
+                </View>
+              </View>
+            </View>
           </View>
         ) : (
           <View style={Styles().collectionContainer}>

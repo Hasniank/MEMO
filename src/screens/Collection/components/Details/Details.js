@@ -2,11 +2,16 @@ import {View, Text, TouchableOpacity, Image, Modal} from 'react-native';
 import React, {useState} from 'react';
 import {IMAGE} from '../../../../assets';
 import {Styles} from './style';
-import {CommonButton} from '../../../../commons';
-import {ScreenLayouts} from '../../../../constant/Screenlayout';
+import Octicons from 'react-native-vector-icons/Octicons';
 
 export const Details = ({navigation}) => {
   const [modalVisible, setModalVisible] = useState(false);
+  // const Tags = route.params?.Tags;
+  // console.log(Tags);
+  // const route  = useRoute()
+  // const Tags = route.params?.Tags;
+  const Tags=["FLUTTER","FRAMEWORK","CROSS-PLATFORM"]
+
   return (
     <View style={Styles().container}>
       <View style={Styles().headerContainer}>
@@ -16,7 +21,7 @@ export const Details = ({navigation}) => {
               navigation.navigate('Collection');
               console.log('back');
             }}>
-            <Image source={IMAGE.IMAGES.BackIcon} />
+            <Octicons name="chevron-left" size={30} color="#ffffff" />
           </TouchableOpacity>
           <Text style={Styles().detailText}>Details</Text>
           <View>
@@ -26,6 +31,11 @@ export const Details = ({navigation}) => {
         <View style={Styles().headerTextContainer}>
           <Text style={Styles().stateText}>EN-US</Text>
           <Text style={Styles().titleText}>Flutter Ecosystem</Text>
+          <View style={Styles().tagView}>
+                  {Tags.map((i,index) => (
+                    <Text style={Styles().tags}>{i}</Text>
+                  ))}
+                </View>
         </View>
       </View>
       <View style={Styles().innerContainer}>
@@ -85,7 +95,9 @@ export const Details = ({navigation}) => {
         </View>
       </View>
       <View style={Styles().lastContainer}>
-        <TouchableOpacity style={Styles().StudyButton} onPress={() => {
+        <TouchableOpacity
+          style={Styles().StudyButton}
+          onPress={() => {
             console.log('Working');
             navigation.navigate('StudyFlow');
           }}>

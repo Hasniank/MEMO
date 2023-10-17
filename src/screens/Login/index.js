@@ -1,12 +1,58 @@
 import {View, Text, Image, Modal, TouchableOpacity} from 'react-native';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Styles} from './styles';
 import {IMAGE} from '../../assets';
 import {Button} from '../../commons';
 import {ScreenLayouts} from '../../constant/Screenlayout';
+import {
+  GoogleSignin,
+  statusCodes,
+  
+} from '@react-native-google-signin/google-signin';
+// import {auth} from '@react-native-firebase/auth';
+import auth from '@react-native-firebase/auth';
 
 export const Login = ({navigation}) => {
-  const [modalVisible, setModalVisible] = useState(false);
+  const [modalVisible, setModalVisible] = useState(true);
+
+  const [initializing, setInitializing] = useState(true);
+  const [user, setUser] = useState();
+
+  GoogleSignin.configure({
+    webClientId:
+      '805718651799-b5f8nse4ir9981pnvg3u28813o70l05f.apps.googleusercontent.com',
+  });
+  const onGoogleButtonPress = async () => {
+    try {
+      // Check if your device supports Google Play
+      await GoogleSignin.hasPlayServices({showPlayServicesUpdateDialog: true});
+      // Get the users ID token
+      const {idToken} = await GoogleSignin.signIn();
+
+      // Create a Google credential with the token
+      const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+
+      // Sign-in the user with the credential
+      return auth().signInWithCredential(googleCredential);
+    } catch (error) {
+      if (error.code === statusCodes.SIGN_IN_CANCELLED) {
+        // user cancelled the login flow
+        console.log(statusCodes.SIGN_IN_CANCELLED, '1');
+      } else if (error.code === statusCodes.IN_PROGRESS) {
+        // operation (e.g. sign in) is in progress already
+        console.log(statusCodes.IN_PROGRESS);
+      } else if (
+        (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE, '2')
+      ) {
+        // play services not available or outdated
+        console.log(statusCodes.PLAY_SERVICES_NOT_AVAILABLE, '3');
+      } else {
+        // some other error happened
+        console.log(error);
+      }
+    }
+  };
+
   return (
     <View style={Styles().container}>
       <View style={Styles().textContainer}>
@@ -30,21 +76,28 @@ export const Login = ({navigation}) => {
           width={ScreenLayouts.screenWidth * 0.9}
           backgroundColor={'#fff'}
           height={ScreenLayouts.screenHeight * 0.07}
-          text={'continue with Google'}
+          text={'Continue with Google'}
           color={'#757575'}
           borderColor={'#fff'}
           borderRadius={5}
           fontSize={22}
-          onPress={() => {
-            console.log('first');
-          }}
+          onPress={() =>
+            onGoogleButtonPress()
+              .then(() => {
+                console.log('User signed in using Google');
+              })
+              .catch(error => {
+                console.log(error);
+              })
+          }
         />
+
         <Button
           source={IMAGE.IMAGES.AppleIcon}
           width={ScreenLayouts.screenWidth * 0.9}
           backgroundColor={'#fff'}
           height={ScreenLayouts.screenHeight * 0.07}
-          text={'continue with Apple'}
+          text={'Continue with GitHub'}
           color={'#000'}
           borderColor={'#fff'}
           borderRadius={5}
@@ -58,7 +111,7 @@ export const Login = ({navigation}) => {
           width={ScreenLayouts.screenWidth * 0.9}
           backgroundColor={'#fff'}
           height={ScreenLayouts.screenHeight * 0.07}
-          text={'continue with GitHub'}
+          text={'Continue with GitHub'}
           color={'#000'}
           borderColor={'#fff'}
           borderRadius={5}

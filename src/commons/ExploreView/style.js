@@ -12,7 +12,8 @@ export const Styles = () =>
       flexDirection: 'row',
       justifyContent: 'space-between',
       width: ScreenLayouts.screenWidth * 0.95,
-      marginTop: 10,
+      marginTop: 20,
+      marginBottom: 10,
     },
     title: {
       color: '#ADA7C1',

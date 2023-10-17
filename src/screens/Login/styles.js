@@ -46,22 +46,31 @@ export const Styles = ({} = {}) =>
     },
     ModalTextContainer: {
       top: 40,
+      width: ScreenLayouts.screenWidth * 0.9,
     },
     modalText1: {
       color: '#fff',
       fontSize: 17,
       textAlign: 'center',
+      fontWeight: 'bold',
     },
     modalText2: {
       color: '#fff',
       fontSize: 15,
-      textAlign: 'center',
+      // textAlign: 'center',
+      height: ScreenLayouts.screenHeight * 0.08,
+      width: ScreenLayouts.screenWidth * 0.85,
+      lineHeight: 25,
+      letterSpacing: 1,
+      marginTop: 40,
     },
     modalButtonContainer: {
       top: 70,
+      justifyContent: 'center',
+      alignItems: 'center',
     },
     createButton: {
-      width: ScreenLayouts.screenWidth * 0.95,
+      width: ScreenLayouts.screenWidth * 0.9,
       height: ScreenLayouts.screenHeight * 0.06,
       backgroundColor: '#49AB6C',
       borderWidth: 1,
@@ -69,9 +78,10 @@ export const Styles = ({} = {}) =>
       alignItems: 'center',
       borderColor: '#49AB6C',
       margin: 10,
+      borderRadius: 5,
     },
     doButton: {
-      width: ScreenLayouts.screenWidth * 0.95,
+      width: ScreenLayouts.screenWidth * 0.9,
       height: ScreenLayouts.screenHeight * 0.06,
       backgroundColor: '#343141',
       borderWidth: 1,
@@ -79,13 +89,16 @@ export const Styles = ({} = {}) =>
       alignItems: 'center',
       margin: 10,
       borderColor: '#343141',
+      borderRadius: 5,
     },
     createText: {
       color: '#FFF',
       fontSize: 15,
+      fontWeight: 'bold',
     },
     doText: {
       color: '#FFF',
+      fontWeight: 'bold',
       fontSize: 15,
     },
   });

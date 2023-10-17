@@ -22,11 +22,12 @@ export const Styles = ({
       flexDirection: 'row',
       alignItems: 'center',
       borderRadius: borderRadius,
-      margin:5
+      margin: 5,
     },
     text: {
       fontSize: fontSize,
       color: color,
+      textAlign: 'center',
     },
     image: {
       width: 30,
